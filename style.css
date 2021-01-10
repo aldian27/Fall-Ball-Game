@@ -42,3 +42,31 @@ body {
     top: 100px;
     margin-top: -20px;
 }
+
+button {
+    color: black;
+    background-color: black;
+    border: none;
+}
+
+@media (max-width: 670px) {
+    .controller {
+        margin-top: 15px;
+        margin-left: 500px;
+    }
+    
+    button {
+        height: 100px;
+        width: 100px;
+        background-color: black;
+    }
+    
+    .buttonright {
+        margin-left: 163px;
+    }
+    
+    .fas {
+        font-size: 70px;
+        color: white;
+    }
+}

@@ -8,14 +8,14 @@ var currentBlocks = []
 function moveLeft() {
     var left = parseInt(window.getComputedStyle(character).getPropertyValue("left"))
     if (left > 0) {
-        character.style.left = left - 2 + "px";
+        character.style.left = left - 1 + "px";
     }
 }
 
 function moveRight() {
     var left = parseInt(window.getComputedStyle(character).getPropertyValue("left"))
     if (left < 380) {
-        character.style.left = left + 2 + "px";
+        character.style.left = left + 1 + "px";
     }
 }
 
@@ -27,12 +27,29 @@ document.addEventListener("keydown", event => {
         if (event.key === "ArrowLeft") {
             interval = setInterval(moveLeft, 1)
         }
-    
+        if (event.key === "a") {
+            interval = setInterval(moveLeft, 1)
+        }
+
         if (event.key === "ArrowRight") {
+            interval = setInterval(moveRight, 1)
+        }
+        if (event.key === "d") {
             interval = setInterval(moveRight, 1)
         }
     }
 
+})
+
+var buttonLeft = document.getElementById("buttonleft")
+var buttonRight = document.getElementById("buttonright")
+
+buttonLeft.addEventListener("click", event => {
+    interval = setInterval(moveLeft, 1)
+})
+
+buttonRight.addEventListener("click", event => {
+    interval = setInterval(moveRight, 1)
 })
 
 document.addEventListener("keyup", event => {
