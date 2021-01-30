@@ -23,7 +23,7 @@ document.addEventListener("keydown", event => {
     if (both === 0) {
 
         both++;
-
+        
         if (event.key === "ArrowLeft") {
             interval = setInterval(moveLeft, 1)
         }
@@ -38,18 +38,22 @@ document.addEventListener("keydown", event => {
             interval = setInterval(moveRight, 1)
         }
     }
-
 })
 
 var buttonLeft = document.getElementById("buttonleft")
-var buttonRight = document.getElementById("buttonright")
-
-buttonLeft.addEventListener("click", event => {
-    interval = setInterval(moveLeft, 1)
+buttonLeft.addEventListener("click", function() {
+    if (both === 0){
+        both++;
+        interval = setInterval(moveLeft, 1)
+    }
 })
 
-buttonRight.addEventListener("click", event => {
-    interval = setInterval(moveRight, 1)
+var buttonRight = document.getElementById("buttonright")
+buttonRight.addEventListener("click", function() {
+    if (both === 0){
+        both++;
+        interval = setInterval(moveRight, 1)
+    }
 })
 
 document.addEventListener("keyup", event => {
